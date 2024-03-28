@@ -10,6 +10,26 @@
 
 # production
 /build
+/dist/
+
+# Arquivos de cache do TypeScript
+*.tsbuildinfo
+
+# Diretórios de cobertura de testes
+/coverage/
+
+# Arquivos de cache do editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de cache do sistema operacional
+Thumbs.db
+
+# Arquivos de bloqueio de pacotes
+package-lock.json
+yarn.lock
 
 # misc
 .DS_Store
@@ -18,6 +38,10 @@
 .env.test.local
 .env.production.local
 
+# Arquivos de log
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+*storybook.log
