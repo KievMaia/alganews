@@ -1,25 +1,28 @@
 import * as VD from './ValueDescriptor.styles'
 
 export interface ValueDescriptorProps {
-    isCurrency?: boolean
     description: string
     value: number
+    color: 'primary' | 'default'
+    isCurrency?: boolean
 }
 
-export default function ValueDescriptor({description, isCurrency, value}: ValueDescriptorProps) {
-    return <VD.Wrapper>
-        <span className='Description'>{description}</span>
-        <div>
+function ValueDescriptor(props: ValueDescriptorProps) {
+    return <VD.Wrapper variant={props.color}>
+        <span className='Description'>{props.description}</span>
+        <div className='Content'>
             {
-                isCurrency &&
-                <span className='Currency'>
-
+                props.isCurrency ?
+                    <span className='Value'>
+                    {(props.value).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
                 </span>
-            }
-
-            <span className='Value'>
-            {(value / 100).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}
+                    :
+                    <span className='Value'>
+            {(props.value).toLocaleString('pt-BR')}
         </span>
+            }
         </div>
     </VD.Wrapper>
 }
+
+export default ValueDescriptor

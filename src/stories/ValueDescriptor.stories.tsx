@@ -12,6 +12,33 @@ export default meta;
 export const Default: Story = {
     args: {
         description: 'ganhos no mês:',
-        value: 560322.00
+        color: 'default',
+        value: 560322.02
+    },
+};
+
+export const DefaultCurrency: Story = {
+    args: {
+        isCurrency: true,
+        color: 'default',
+        description: 'ganhos no mês:',
+        value: 560322.02
+    },
+};
+
+export const Primary: Story = {
+    args: {
+        color: 'primary',
+        description: 'ganhos no mês:',
+        value: 560322.02
+    },
+};
+
+export const PrimaryCurrency: Story = {
+    args: {
+        isCurrency: true,
+        color: 'primary',
+        description: 'ganhos no mês:',
+        value: 560322.02
     },
 };
